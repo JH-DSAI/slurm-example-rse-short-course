@@ -13,4 +13,5 @@ From: astral/uv:python3.12-bookworm-slim
     uv pip install --requirements requirements.txt
 
 %runscript
-    uv run -p /app/.venv /app/example.py
+    cd /app
+    exec uv run -p .venv example.py
