@@ -1,0 +1,17 @@
+The Iris dataset comes from the UCI ML repository:
+
+https://archive.ics.uci.edu/dataset/53/iris
+
+To build the container:
+
+```bash
+apptainer build train_model.sif train_model.def
+```
+
+To run the container locally we need to bind mount the output directory
+
+```bash
+apptainer run --bind ../output:/output train_model.sif
+```
+
+On the cluster you can bind mount the scratch directory to the output directory

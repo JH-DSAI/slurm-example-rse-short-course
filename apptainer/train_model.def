@@ -1,0 +1,16 @@
+Bootstrap: docker
+From: astral/uv:python3.12-bookworm-slim
+
+%files
+    example.py /app/example.py
+    iris.data /app/iris.data
+    requirements.txt /app/requirements.txt
+
+%post
+    mkdir /output
+    cd /app
+    uv venv
+    uv pip install --requirements requirements.txt
+
+%runscript
+    uv run -p /app/.venv /app/example.py
