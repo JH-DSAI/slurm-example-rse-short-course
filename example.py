@@ -21,9 +21,7 @@ rf_model = RandomForestClassifier(n_estimators=100, random_state=42).fit(X_train
 accuracy = rf_model.score(X_test, y_test)
 print(f"Model Accuracy: {accuracy:.2f}")
 
-# outpath
-os.makedirs('/output', exist_ok=True)
-
-with open('/output/rf_model.pkl', 'wb') as f:
+with open('rf_model.pkl', 'wb') as f:
     pickle.dump(rf_model, f)
-print("Model saved to /output/rf_model.pkl")
+
+print("Model saved to rf_model.pkl")

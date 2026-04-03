@@ -1,2 +1,2 @@
-output/*.pkl
-apptainer/train_model.sif
+*.pkl
+*.sif
