@@ -7,4 +7,6 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=2G
 
-apptainer run  --bind /scratch/ehunte18/rhausen1/train_model:/output /home/rhausen1/apptainer/train_model.sif
+cd /scratch/ehunte18/$USER/rse-example
+
+apptainer run images/python_ml.sif main.py
