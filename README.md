@@ -47,6 +47,10 @@ ssh dsai "mkdir -p ${REMOTE_PATH}/images"
 
 # Copy the built image over
 scp images/python_ml.sif dsai:${REMOTE_PATH}/images/
+# If you couldn't build the image you can use the one I built uncomment out
+# the line below and comment the `scp` command above
+# ssh dsai "cp /scratch/ehunte18/rhausen1/rse-example/images/python_ml.sif ${REMOTE_PATH}/images/
+
 # Copy over the sbatch script
 scp sbatch_apptainer.sh dsai:${REMOTE_PATH}/
 ```
